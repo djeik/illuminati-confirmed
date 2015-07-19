@@ -1,3 +1,10 @@
+(function() {
+
+function playIlluminati() {
+    document.getElementById('illuminati-music').play();
+    console.log('playing illuminati music');
+}
+
 $(document).ready(function() {
     var input = $("input[type='file']");
     input.attr("disabled", false);
@@ -36,6 +43,7 @@ $(document).ready(function() {
                 });
                 $("#photo2").attr("src", data.url);
                 $("#spinner").fadeOut(5000);
+                playIlluminati();
             },
             error: function(error) {
                 console.log('error occurred', error);
@@ -43,3 +51,5 @@ $(document).ready(function() {
         });
     });
 });
+
+})();
