@@ -23,8 +23,11 @@ $("input[type='file']").on("change",function(event){
         contentType: false,
         success: function(data, textStatus, jqXHR){
             $("#title").text("Illuminati Confirmed!");
+            $("#photo2").load(function(){
+                $("photo").hide();
+            });
+            $("#photo2").attr("src", data.url);
             $("spinner").fadeOut(5000);
-            $("#photo").attr("src", data.url);
         }
     });
 });
