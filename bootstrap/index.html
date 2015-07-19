@@ -98,6 +98,12 @@
                 display: none;
             }
 
+            #photo2 {
+                width: 100%;
+                height: 100%;
+                display: none;
+            }
+
             #upload-icon {
                 color: #ccc;
                 font-size: 25vw;
@@ -180,6 +186,7 @@
                             <input type="file" id="file-upload-input">
                             <span id="upload-icon" class="glyphicon glyphicon-upload"></span>
                             <img id="photo" src="">
+                            <img id="photo2" src="">
                             <img id="spinner" src="illuminati.png"></img>
                         </div>
                         <br><br>
@@ -221,8 +228,11 @@
                 contentType: false,
                 success: function(data, textStatus, jqXHR){
                     $("#title").text("Illuminati Confirmed!");
-                    $("spinner").fadeOut(5000);
-                    $("#photo").attr("src", data.url);
+                    $("#photo2").load(function(){
+                        $("photo").hide();
+                    });
+                    $("#photo2").attr("src", data.url);
+                    $("#spinner").fadeOut(5000);
                 }
             });
         });
