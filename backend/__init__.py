@@ -53,4 +53,6 @@ app.logger.addHandler(_syslog_handler)
 
 from . import (
         views,
+        confirm,
+        api,
 )

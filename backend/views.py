@@ -1,5 +1,8 @@
-from flask import render_template
-from . import app
+from flask import render_template, send_file
+
+from . import app, basedir
+
+import os
 
 @app.route('/')
 def index():
@@ -7,6 +10,13 @@ def index():
             'webapp.html',
     )
 
-@app.route('/img/<img_id>')
-def get_img(img_id):
-    abort(404)
+@app.route('/illuminati/<id>')
+def illuminati(id):
+    return send_file(
+            os.path.join(
+                basedir,
+                app.config['ILLUMINATI_OUTPUT_DIR'],
+                id + '.' + app.config['ILLUMINATI_FORMAT'],
+            ),
+            conditional=True,
+    )
