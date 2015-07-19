@@ -1,3 +1,4 @@
 /bin/
 /include/
 /lib/
+/secret_backend_config.py
