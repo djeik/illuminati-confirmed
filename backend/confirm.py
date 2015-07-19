@@ -13,7 +13,7 @@ def confirm_illuminati(handle):
 
     The random file name (not the full path!) is returned.
     """
-    filename = ''.join(
+    id = ''.join(
             [
                 random.choice(
                     app.config[
@@ -27,7 +27,8 @@ def confirm_illuminati(handle):
                     ],
                 )
             ],
-    ) + '.' + app.config['ILLUMINATI_FORMAT']
+    )
+    filename = id + '.' + app.config['ILLUMINATI_FORMAT']
 
     output_path = path.join(
             basedir,
@@ -55,4 +56,4 @@ def confirm_illuminati(handle):
     except sp.CalledProcessError:
         return None
 
-    return filename
+    return id
