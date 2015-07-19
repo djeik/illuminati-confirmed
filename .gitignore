@@ -8,3 +8,4 @@ __pycache__/
 /backend/bower_components/
 /backend/node_modules/
 *.d
+/backend/static/less/dist
