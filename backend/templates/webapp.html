@@ -21,6 +21,8 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <link href='{{ url_for("bower.static", filename="fontawesome/css/font-awesome.css") }}'
+            rel='stylesheet'>
         <link href='/static/less/dist/style.min.css' rel='stylesheet'>
     </head>
 
@@ -50,7 +52,9 @@
                 <form>
                     <div id="image-box">
                         <input type="file" id="file-upload-input">
-                        <span id="upload-icon" class="glyphicon glyphicon-upload"></span>
+                        <span id="upload-icon"
+                            class="fa fa-cloud-upload glyphicon">
+                        </span>
                         <img id="photo" src="">
                         <img id="photo2" src="">
                         <img id="spinner" src="/static/img/illuminati.png"></img>
