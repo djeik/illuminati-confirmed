@@ -2,6 +2,7 @@ from flask import request, jsonify, url_for
 
 from . import app
 from .confirm import confirm_illuminati
+from tempfile import TemporaryFile
 
 def json_die(message, code=400):
     response = jsonify(
@@ -21,7 +22,12 @@ def confirm():
                 400,
         )
 
-    illuminati_id = confirm_illuminati(file.stream)
+    s = file.read()
+    tmp = TemporaryFile()
+    tmp.write(s)
+    tmp.seek(0)
+
+    illuminati_id = confirm_illuminati(tmp)
     if not illuminati_id:
         return json_die(
                 'Invalid file.',
