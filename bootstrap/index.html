@@ -1,88 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Illuminati Confirmed!</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Illuminati Confirmed!">
+        <meta property="og:site_name" content:"Illuminati Confirmed | Confirming the Existence of the Illuminati Since 2015">
+        <meta property="og:image" content="https://media2.giphy.com/media/QUEFPDQhw89bi/200_s.gif">
+        <meta property="og:description" content="Within this photo contains evidence of the existence of the Illuminati. Be warned; this is a governmental agency that will not rest until they have conquered the world with cat gifs.">
+        <meta property="fb:app_id" content="982515815140018">
+        <title>The Illuminati are all around us.</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
-	<style>
-		html, body {
-			height:100%;
-		}
-		
-		.navbar-brand {	
-			font-size:1.8em;
-		}
-		
-		.container {
-			background-color:blue;
-			width:100%;
-			height:100%;
-			background-size:cover;
-			background-position:center;
-			padding-top:35px;
-		}
-		#topRow {	
-			text-align:center;
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-		}
-		#topRow h1 {
-			font-size:300%;
-		}	
-		
-		.font {
-			color:white;
-			font-weight:bold;
-			font-family: "Lucida Console";
-		}
-		
-		.marginTops {
-			margin-top:50px;
-		}
-		
-		.marginLeft{
-			margin-left:90px;
-		}
-		
-		.img-responsive{
-			margin-top: 30px;
-		}
-		
-	</style>
-  </head>
-  <body>
-			<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3" id="topRow">
-					<h1 class="font">Illuminati Confirmed</h1>
-					
-					
-					<img class="img-responsive center-block" src="square.png" alt="The illuminati is attacking our website">	
-					<form>
-						 <button type="button" class="btn marginTops"><span class="glyphicon glyphicon-upload"></span> Upload picture</button>
-						 <button type="button" class="btn btn-success marginTops marginLeft "> <span class="glyphicon glyphicon-eye-open"></span> Check for Illuminati</button>
-					</form>
-				</div>
-			</div>
-		</div>
+        <style>
+            html, body {
+                height:100%;
+                width:100%;
+            }
+            .navbar-brand {
+                font-size:1.8em;
+            }
 
-	
+            .container {
+                background-color:black;
+                width:100%;
+                height:100%;
+                background-size:cover;
+                background-position:center;
+                padding-top:35px;
+            }
+
+            #topRow {
+                text-align:center;
+                width: 75vw;
+                margin: 0 auto;
+                float: none;
+            }
+
+            #topRow h1 {
+                font-size:3em;
+            }
+
+            .font {
+                color:white;
+                font-weight:bold;
+                font-family:"Helvetica";
+            }
+
+            .marginTops {
+                margin-top:50px;
+            }
+
+            .marginLeft{
+                margin-left:90px;
+            }
+
+            .img-responsive{
+                margin-top: 30px;
+            }
+
+            #image-box{
+                border-style: dashed;
+                border-color: white;
+                border-size: 8em;
+                width:33vw;
+                height:33vw;
+                margin:0 auto;
+                position: relative;
+            }
+
+            @media (max-width:600px){
+                #image-box{
+                    border-style:dashed;
+                    border-color:white;
+                    border-size:8em;
+                    width:66vw;
+                    height:66vw;
+                    margin:0 auto;
+                }
+            }
+
+            #image-box > input[type="file"]{
+                display: none;
+            }
+
+            #photo {
+                width: 100%;
+                height: 100%;
+                display: none;
+            }
+
+            #upload-icon {
+                color: #ccc;
+                font-size: 25vw;
+                margin: 0 auto;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition: color 0.30s ease;
+            }
+
+            #upload-icon:hover {
+                color: white;
+            }
+
+            #spinner {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: rotate(0deg) translate(-50%, -50%);
+                transform-origin: 0% 0%;
+                -webkit-animation:spin 2s linear infinite;
+                -moz-animation:spin 2s linear infinite;
+                animation:spin 2s linear infinite;
+                display: none;
+            }
+            @-moz-keyframes spin{
+                100%{
+                    -moz-transform: rotate(359deg) translate(-50%, -50%);
+                }
+            }
+            @-webkit-keyframes spin{
+                100%{
+                    -webkit-transform: rotate(359deg) translate(-50%, -50%);
+                }
+            }
+            @keyframes spin{
+                100% {
+                    -webkit-transform: rotate(359deg); transform:rotate(360deg) translate(-50%, -50%);
+                } 
+            }
+
+            .fb-share-button {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '982515815140018',
+              xfbml      : true,
+              version    : 'v2.3'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div class="container">
+            <div class="row">
+                <div id="topRow">
+                    <h1 id="title" class="font">Illuminati Confirmed?</h1>
+
+                    <label id="image-label">
+                        <div id="image-box">
+                            <input type="file" id="file-upload-input">
+                            <span id="upload-icon" class="glyphicon glyphicon-upload"></span>
+                            <img id="photo" src="">
+                            <img id="spinner" src="illuminati.png"></img>
+                        </div>
+                        <br><br>
+                        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("input[type='file']").on("change",function(event){
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event){
+                $("#photo").attr("src", event.target.result);
+                $("#photo").show();
+                $("#upload-icon").hide();
+                $("#spinner").fadeIn(5000);
+                $("#title").text("Confirming Illuminati...");
+            }
+            reader.readAsDataURL(file);
+
+            var data = new FormData();
+            data.append("illuminati", file);
+
+            $.ajax({
+                url: "/api/confirm",
+                type: "POST",
+                data: data,
+                cache: false,
+                dataType: "string",
+                processData: false,
+                contentType: false,
+                success: function(data, textStatus, jqXHR){
+                    $("#title").text("Illuminati Confirmed!");
+                    $("spinner").fadeOut(5000);
+                    $("#photo").attr("src", data.url);
+                }
+            });
+        });
+    </script>
   </body>
 </html>
