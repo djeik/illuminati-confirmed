@@ -18,16 +18,22 @@ $("input[type='file']").on("change",function(event){
         type: "POST",
         data: data,
         cache: false,
-        dataType: "string",
+        dataType: 'json',
         processData: false,
         contentType: false,
-        success: function(data, textStatus, jqXHR){
+        success: function(data, textStatus, jqXHR) {
+            console.log('Ajax succeeded');
             $("#title").text("Illuminati Confirmed!");
             $("#photo2").load(function(){
-                $("photo").hide();
+                console.log('photo2 loaded');
+                $("#photo").hide();
+                $("#photo2").show();
             });
             $("#photo2").attr("src", data.url);
-            $("spinner").fadeOut(5000);
+            $("#spinner").fadeOut(5000);
+        },
+        error: function(error) {
+            console.log('error occurred', error);
         }
     });
 });
