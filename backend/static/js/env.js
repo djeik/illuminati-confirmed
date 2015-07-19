@@ -7,6 +7,7 @@ $("input[type='file']").on("change",function(event){
         $("#upload-icon").hide();
         $("#spinner").fadeIn(5000);
         $("#title").text("Confirming Illuminati...");
+        $("#file-upload-input").attr("disabled", "disabled");
     }
     reader.readAsDataURL(file);
 
