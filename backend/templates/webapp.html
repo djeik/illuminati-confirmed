@@ -16,9 +16,6 @@
         <script
             src='{{ url_for("bower.static", filename="jquery/dist/jquery.js") }}'>
         </script>
-        <link rel='stylesheet'
-            href='{{ url_for("bower.static", filename="bootstrap/dist/css/bootstrap.css") }}'>
-
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -28,7 +25,6 @@
     </head>
 
     <body>
-        <div id="fb-root"></div>
         <script>
           window.fbAsyncInit = function() {
             FB.init({
@@ -48,27 +44,22 @@
         </script>
 
         <div class="container">
-            <div class="row">
-                <div id="topRow">
-                    <h1 id="title" class="font">Illuminati Confirmed?</h1>
+            <h1 id="title">Illuminati Confirmed?</h1>
 
-                    <label id="image-label">
-                        <div id="image-box">
-                            <input type="file" id="file-upload-input">
-                            <span id="upload-icon" class="glyphicon glyphicon-upload"></span>
-                            <img id="photo" src="">
-                            <img id="photo2" src="">
-                            <img id="spinner" src="/static/img/illuminati.png"></img>
-                        </div>
-                        <br><br>
-                        <div class="fb-share-button" data-href="http://www.illuminaticonfirmed.xyz" data-layout="button"></div>
-                    </label>
+            <label id="image-label">
+                <div id="image-box">
+                    <input type="file" id="file-upload-input">
+                    <span id="upload-icon" class="glyphicon glyphicon-upload"></span>
+                    <img id="photo" src="">
+                    <img id="photo2" src="">
+                    <img id="spinner" src="/static/img/illuminati.png"></img>
                 </div>
+            </label>
+            <div id="fb-root">
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
             </div>
         </div>
 
-        <script src='{{ url_for("bower.static", filename="bootstrap/dist/js/bootstrap.js") }}'
-        </script>
         <script src='/static/js/env.js'></script>
   </body>
 </html>
