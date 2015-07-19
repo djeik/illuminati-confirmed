@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    $("input[type='file']").on("change",function(event){
+    var input = $("input[type='file']");
+    input.attr("disabled", false);
+
+    input.on("change", function(event) {
         var file = event.target.files[0];
         var reader = new FileReader();
         reader.onload = function(event){
