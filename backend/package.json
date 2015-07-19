@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "less": "^2.5.1",
+    "less-plugin-autoprefix": "^1.4.2",
     "uglifycss": "0.0.15"
   }
 }
