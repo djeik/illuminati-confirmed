@@ -2,3 +2,4 @@
 /include/
 /lib/
 /secret_backend_config.py
+__pycache__/
