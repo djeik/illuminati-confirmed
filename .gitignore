@@ -6,3 +6,5 @@ __pycache__/
 /test/
 /backend/output/
 /backend/bower_components/
+/backend/node_modules/
+*.d
