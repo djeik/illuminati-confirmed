@@ -75,26 +75,26 @@ if __name__ == '__main__':
     big_box_h = min(box_h * 5, orig_h)
 
     # zoomed in images
-    zooms = []
+    #zooms = []
 
-    for i in range(2,6):
-        crop_x = box_x - int(box_x/i)
-        crop_y = box_y - int(box_y/i)
+    #for i in range(2,6):
+    #    crop_x = box_x - int(box_x/i)
+    #    crop_y = box_y - int(box_y/i)
 
-        crop_w = box_x+box_w + int(box_x/i)
-        crop_h = box_y+box_h + int(box_y/i)
+    #    crop_w = box_x+box_w + int(box_x/i)
+    #    crop_h = box_y+box_h + int(box_y/i)
 
-        crop_image = img[
-                crop_y:crop_h,
-                crop_x:crop_w,
-        ]
+    #    crop_image = img[
+    #            crop_y:crop_h,
+    #            crop_x:crop_w,
+    #    ]
 
-        zooms.append(
-                cv2.resize(
-                    crop_image,
-                    (orig_w, orig_h),
-                ),
-        )
+    #    zooms.append(
+    #            cv2.resize(
+    #                crop_image,
+    #                (orig_w, orig_h),
+    #            ),
+    #    )
 
     print(np.shape(img_col))
     print(largest_contour)
