@@ -11,9 +11,8 @@ function shareIlluminati() {
     }
 
     FB.ui({
-        method: 'feed',
-        link: link,
-        caption: caption
+        method: 'share',
+        href: link
     }, function(response){});
 }
 
