@@ -42,7 +42,7 @@ $(document).ready(function() {
         reader.onload = function(event){
             console.log('reader loaded');
             var photo = $("#photo");
-            $("#upload-icon").hide();
+            $(".upload-button").hide();
             photo.load(function() {
                 $("#spinner").fadeIn(5000);
                 $("#title").text("Confirming Illuminati...");
