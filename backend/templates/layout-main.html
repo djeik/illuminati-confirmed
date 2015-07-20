@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="fb:app_id" content="982515815140018">
-        <title>The Illuminati are all around us.</title>
+        <title>Illuminati Confirmed!</title>
 
         {% block ogtags %}
         {% endblock %}
@@ -22,6 +22,7 @@
         <link href='{{ url_for("bower.static", filename="fontawesome/css/font-awesome.css") }}'
             rel='stylesheet'>
         <link href='/static/less/dist/style.min.css' rel='stylesheet'>
+        <link href='/static/img/eye.jpg' rel='icon'>
     </head>
 
     <body>
@@ -43,9 +44,25 @@
            }(document, 'script', 'facebook-jssdk'));
         </script>
 
-        <div class="container">
-            {% block contents %}
-            {% endblock contents %}
+        <div id='main-container'>
+            <div class="container">
+                {% block contents %}
+                {% endblock contents %}
+            </div>
+
+            <div class='banners banners-left'>
+                <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=illumiconfir-20&marketplace=amazon&region=US&placement=B00T7D5GJ6&asins=B00T7D5GJ6&linkId=T5RUMI6GZP7U2LAS&show_border=true&link_opens_in_new_window=true">
+                </iframe>
+                <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=illumiconfir-20&marketplace=amazon&region=US&placement=B00WTNHFU4&asins=B00WTNHFU4&linkId=TYUJZOTP4YXFXMK4&show_border=true&link_opens_in_new_window=true">
+                </iframe>
+            </div>
+
+            <div class='banners banners-right'>
+                <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=illumiconfir-20&marketplace=amazon&region=US&placement=B00B5KWGCO&asins=B00B5KWGCO&linkId=OPDT5TXO2Z6QHTKK&show_border=true&link_opens_in_new_window=true">
+                </iframe>
+                <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=illumiconfir-20&marketplace=amazon&region=US&placement=B00NRC7UTM&asins=B00NRC7UTM&linkId=R5UO4NVJG7LHPOPZ&show_border=true&link_opens_in_new_window=true">
+                </iframe>
+            </div>
         </div>
 
         {% block bodyjs %}

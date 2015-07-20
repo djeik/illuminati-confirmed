@@ -12,7 +12,7 @@ body {
     margin: 0;
     background-color: black;
     background-origin: border-box;
-    font-family:"Helvetica";
+    font-family: "Helvetica", sans;
 }
 
 .container {
@@ -21,9 +21,13 @@ body {
     align-items: center;
     flex-flow: column nowrap;
     text-align: center;
-    width:100%;
+    width: 60vw;
     height:100%;
     color: white;
+
+    > * {
+        margin: 1em;
+    }
 }
 
 #image-box{
@@ -110,4 +114,41 @@ body {
 
 #illuminati-music {
     display: none;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5em 1em;
+    background-color: #44f;
+    border-width: 1px;
+    border-style: solid;
+    border-color:
+        lighten(#44f, 15%, relative)
+        lighten(#44f, 10%, relative)
+        darken(#44f, 15%, relative);
+}
+
+.banners {
+    padding: 2em;
+    > * {
+        margin: 1em auto;
+    }
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.banners.banners-right {
+}
+
+.banners.banners-left {
+}
+
+#main-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }
