@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="fb:app_id" content="982515815140018">
+        <title>The Illuminati are all around us.</title>
+
+        {% block ogtags %}
+        {% endblock %}
+
+        <script
+            src='{{ url_for("bower.static", filename="jquery/dist/jquery.js") }}'>
+        </script>
+
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <link href='{{ url_for("bower.static", filename="fontawesome/css/font-awesome.css") }}'
+            rel='stylesheet'>
+        <link href='/static/less/dist/style.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '982515815140018',
+              xfbml      : true,
+              version    : 'v2.3'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div class="container">
+            {% block contents %}
+            {% endblock contents %}
+        </div>
+
+        {% block bodyjs %}
+        <script src='/static/js/env.js'></script>
+        {% endblock %}
+  </body>
+</html>

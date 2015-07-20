@@ -1,75 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="Illuminati Confirmed!">
-        <meta property="og:site_name" content:"Illuminati Confirmed | Confirming the Existence of the Illuminati Since 2015">
-        <meta property="og:image" content="https://media2.giphy.com/media/QUEFPDQhw89bi/200_s.gif">
-        <meta property="og:description" content="If you look carefully enough, you can see the Illuminati everywhere. In every photo in the world, there is some evidence of the Illuminati. This is a FACT.">
-        <meta property="fb:app_id" content="982515815140018">
-        <title>The Illuminati are all around us.</title>
+{% extends "layout-main.html" %}
 
-        <script
-            src='{{ url_for("bower.static", filename="jquery/dist/jquery.js") }}'>
-        </script>
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+{% block ogtags %}
+<meta property="og:type" content="article">
+<meta property="og:title" content="Illuminati Confirmed!">
+<meta property="og:site_name" content:"Illuminati Confirmed | Confirming the Existence of the Illuminati Since 2015">
+<meta property="og:image" content="https://media2.giphy.com/media/QUEFPDQhw89bi/200_s.gif">
+<meta property="og:description" content="If you look carefully enough, you can see the Illuminati everywhere. In every photo in the world, there is some evidence of the Illuminati. This is a FACT.">
+{% endblock %}
 
-        <link href='{{ url_for("bower.static", filename="fontawesome/css/font-awesome.css") }}'
-            rel='stylesheet'>
-        <link href='/static/less/dist/style.min.css' rel='stylesheet'>
-    </head>
+{% block contents %}
+<h1 id="title">Illuminati Confirmed?</h1>
 
-    <body>
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '982515815140018',
-              xfbml      : true,
-              version    : 'v2.3'
-            });
-          };
-
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
-
-        <div class="container">
-            <h1 id="title">Illuminati Confirmed?</h1>
-
-            <label id="image-label">
-                <form novalidate>
-                    <div id="image-box">
-                        <input type="file" id="file-upload-input">
-                        <span id="upload-icon"
-                            class="fa fa-cloud-upload glyphicon">
-                        </span>
-                        <img id="photo" src="">
-                        <img id="photo2" src="">
-                        <img id="spinner" src="/static/img/illuminati.png"></img>
-                    </div>
-                </form>
-            </label>
-            <div id="fb-root">
-                <div class="fb-share-button" data-href="http://www.illuminaticonfirmed.xyz:6501" data-layout="button"></div>
-            </div>
+<label id="image-label">
+    <form novalidate>
+        <div id="image-box">
+            <input type="file" id="file-upload-input">
+            <span id="upload-icon"
+                class="fa fa-cloud-upload glyphicon">
+            </span>
+            <img id="photo" src="">
+            <img id="photo2" src="">
+            <img id="spinner" src="/static/img/illuminati.png"></img>
         </div>
+    </form>
+</label>
+<div id="fb-root">
+    <div class="fb-share-button" data-href="http://www.illuminaticonfirmed.xyz:6501" data-layout="button"></div>
+</div>
+{% endblock contents %}
 
-        <audio id='illuminati-music'>
-            <source src='/static/audio/illuminati.ogg' type='audio/ogg'>
-            <source src='/static/audio/illuminati.mp3' type='audio/mpeg'>
-        </audio>
-        <script src='/static/js/env.js'></script>
-  </body>
-</html>
+{% block bodyjs %}
+{{ super() }}
+<audio id='illuminati-music'>
+    <source src='/static/audio/illuminati.ogg' type='audio/ogg'>
+    <source src='/static/audio/illuminati.mp3' type='audio/mpeg'>
+</audio>
+{% endblock %}
