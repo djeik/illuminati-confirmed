@@ -66,13 +66,6 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             success: function(data, textStatus, jqXHR) {
-                var shareURL = "https://www.facebook.com/dialog/share?" +
-                    "app_id=982515815140018" +
-                    "&display=popup" +
-                    "&href=" + encodeURIComponent("http://www.illuminaticonfirmed.xyz:6501/") +
-                    data.id +
-                    "&redirect_uri=" + encodeURIComponent("http://www.illuminaticonfirmed.xyz");
-
                 console.log('Ajax succeeded', JSON.stringify(data));
                 // Change header text
                 $("#title").text("Illuminati Confirmed!");
@@ -83,10 +76,6 @@ $(document).ready(function() {
                     console.log('photo2 loaded');
                     $("#photo").hide();
                     $("#photo2").show();
-                    $("#new-share-link").on("click", function(){
-                        event.preventDefault();
-                        window.open(shareURL, target="_blank");
-                    });
                 });
 
                 // Load the new image
