@@ -1,3 +1,22 @@
+var illuminatiId = null;
+
+function shareIlluminati() {
+    if(illuminatiId == null) {
+        caption = 'Help find the illuminati!';
+        link = 'http://illuminati.xyz';
+    }
+    else {
+        caption = 'The illuminati have been found; Help find more!';
+        link = 'http://illuminati.xyz/' + illuminatiId;
+    }
+
+    FB.ui({
+        method: 'feed',
+        link: link, 
+        caption: caption
+    }, function(response){});
+}
+
 (function() {
 
 function playIlluminati() {
@@ -6,6 +25,7 @@ function playIlluminati() {
 }
 
 $(document).ready(function() {
+    console.log('initializing');
     var input = $("input[type='file']");
     input.attr("disabled", false);
 
@@ -32,6 +52,7 @@ $(document).ready(function() {
             photo.attr("src", event.target.result);
             photo.show();
         }
+        console.log('reading file');
         reader.readAsDataURL(file);
 
         var data = new FormData();
@@ -71,6 +92,7 @@ $(document).ready(function() {
 
                 // Load the new image
                 $("#photo2").attr("src", data.url);
+                illuminatiId = data.id;
 
                 // Fade out the spinner for five seconds
                 $("#spinner").fadeOut(5000);
