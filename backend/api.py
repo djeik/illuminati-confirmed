@@ -37,5 +37,6 @@ def confirm():
     return jsonify(
             dict(
                 url=url_for('illuminati', id=illuminati_id),
+                id=illuminati_id,
             ),
     )
