@@ -34,12 +34,20 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             success: function(data, textStatus, jqXHR) {
+                var shareUrl = "https://www.facebook.com/dialog/share?" +
+                    "app_id=982515815140018" +
+                    "&display=popup" +
+                    "&href=" + "http%3A%2F%2Fwww.illuminaticonfirmed.xyz:6501" + encodeURIComponent(data.id) +
+                    "&redirect_uri=" + encodeURIComponent(window.location.href); 
+
                 console.log('Ajax succeeded');
                 $("#title").text("Illuminati Confirmed!");
                 $("#photo2").load(function(){
                     console.log('photo2 loaded');
                     $("#photo").hide();
                     $("#photo2").show();
+                    $("pluginShareButtonLink").attr("href", "/sharer/sharer.php?app_id=982515815140018&amp;sdk=joey&amp;u=http%3A%2F%2Fwww.illuminaticonfirmed.xyz%3A6501%2F" +
+                        data.id + "&amp;display=popup&amp;ref=plugin&amp;src=share_button"
                 });
                 $("#photo2").attr("src", data.url);
                 $("#spinner").fadeOut(5000);
