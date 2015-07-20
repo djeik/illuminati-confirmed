@@ -46,11 +46,12 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             success: function(data, textStatus, jqXHR) {
-                var shareUrl = "https://www.facebook.com/dialog/share?" +
+                var shareURL = "https://www.facebook.com/dialog/share?" +
                     "app_id=982515815140018" +
                     "&display=popup" +
-                    "&href=" + "http%3A%2F%2Fwww.illuminaticonfirmed.xyz:6501" + encodeURIComponent(data.id) +
-                    "&redirect_uri=" + encodeURIComponent(window.location.href);
+                    "&href=" + encodeURIComponent("http://www.illuminaticonfirmed.xyz:6501/") +
+                    data.id +
+                    "&redirect_uri=" + encodeURIComponent("http://www.illuminaticonfirmed.xyz");
 
                 console.log('Ajax succeeded', JSON.stringify(data));
                 // Change header text
@@ -62,10 +63,10 @@ $(document).ready(function() {
                     console.log('photo2 loaded');
                     $("#photo").hide();
                     $("#photo2").show();
-                    $("pluginShareButtonLink").attr(
-                        "href",
-                        "/sharer/sharer.php?app_id=982515815140018&amp;sdk=joey&amp;u=http%3A%2F%2Fwww.illuminaticonfirmed.xyz%3A6501%2F" +
-                        data.id + "&amp;display=popup&amp;ref=plugin&amp;src=share_button");
+                    $("#new-share-link").on("click", function(){
+                        event.preventDefault();
+                        window.open(shareURL, target="_blank");
+                    });
                 });
 
                 // Load the new image

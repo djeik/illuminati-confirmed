@@ -11,16 +11,47 @@
 {% block contents %}
 <h1 id="title">Illuminati Confirmed?</h1>
 
-<label id="image-label">
-    <form novalidate>
-        <div id="image-box">
-            <input type="file" id="file-upload-input">
-            <span id="upload-icon"
-                class="fa fa-cloud-upload glyphicon">
-            </span>
-            <img id="photo" src="">
-            <img id="photo2" src="">
-            <img id="spinner" src="/static/img/illuminati.png"></img>
+    <body>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '982515815140018',
+              xfbml      : true,
+              version    : 'v2.4'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div class="container">
+            <h1 id="title">Illuminati Confirmed?</h1>
+
+            <label id="image-label">
+                <form novalidate>
+                    <div id="image-box">
+                        <input type="file" id="file-upload-input">
+                        <span id="upload-icon"
+                            class="fa fa-cloud-upload glyphicon">
+                        </span>
+                        <img id="photo" src="">
+                        <img id="photo2" src="">
+                        <img id="spinner" src="/static/img/illuminati.png"></img>
+                    </div>
+                </form>
+            </label>
+            <div id="fb-root">
+                <div class="fb-share-button" data-href="http://www.illuminaticonfirmed.xyz:6501" data-layout="button"></div>
+            </div>
+            <div id="new-share-div">
+                <a id="new-share-link" href="">Share this photo on Facebook!</a>
+            </div>
         </div>
     </form>
 </label>
