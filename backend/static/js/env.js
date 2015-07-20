@@ -3,16 +3,16 @@ var illuminatiId = null;
 function shareIlluminati() {
     if(illuminatiId == null) {
         caption = 'Help find the illuminati!';
-        link = 'http://illuminati.xyz';
+        link = 'http://illuminaticonfirmed.xyz';
     }
     else {
         caption = 'The illuminati have been found; Help find more!';
-        link = 'http://illuminati.xyz/' + illuminatiId;
+        link = 'http://illuminaticonfirmed.xyz/' + illuminatiId;
     }
 
     FB.ui({
         method: 'feed',
-        link: link, 
+        link: link,
         caption: caption
     }, function(response){});
 }
