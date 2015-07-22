@@ -67,26 +67,26 @@ $(document).ready(function() {
             contentType: false,
             success: function(data, textStatus, jqXHR) {
                 console.log('Ajax succeeded', JSON.stringify(data));
-                // Change header text
-                $("#title").text("Illuminati Confirmed!");
-
                 // When the new image is loaded, replace the initial image with
                 // the new image
                 $("#photo2").load(function(){
+                    // Change header text
+                    $("#title").text("Illuminati Confirmed!");
+
+                    // Fade out the spinner for five seconds
+                    $("#spinner").fadeOut(5000);
+
                     console.log('photo2 loaded');
                     $("#photo").hide();
                     $("#photo2").show();
+
+                    // Play the xfiles music
+                    playIlluminati();
                 });
 
                 // Load the new image
                 $("#photo2").attr("src", data.url);
                 illuminatiId = data.id;
-
-                // Fade out the spinner for five seconds
-                $("#spinner").fadeOut(5000);
-
-                // Play the xfiles music
-                playIlluminati();
             },
             error: function(error) {
                 $("#title").text("Can't confirm!");
