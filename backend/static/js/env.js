@@ -66,7 +66,6 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             success: function(data, textStatus, jqXHR) {
-                console.log('Ajax succeeded', JSON.stringify(data));
                 // When the new image is loaded, replace the initial image with
                 // the new image
                 $("#photo2").load(function(){
