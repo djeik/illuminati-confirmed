@@ -10,3 +10,5 @@ __pycache__/
 *.d
 /backend/static/less/dist
 .ackrc
+/.Python
+/pip-selfcheck.json
