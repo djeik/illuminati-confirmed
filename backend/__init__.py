@@ -41,18 +41,17 @@ _smtp_handler = SMTPHandler(
         app.config['SMTP_LOGGING']['secure'],
 )
 
-if app.config['DEBUG']:
-    _syslog_handler.setLevel(logging.DEBUG)
-    app.config['SERVER_NAME'] += ':' + str(app.config['DEBUG_PORT'])
-else:
-    _syslog_handler.setLevel(logging.INFO)
-    _smtp_handler.setLevel(logging.ERROR)
+@app.before_first_request
+def appconfig():
+    if app.config['DEBUG']:
+        _syslog_handler.setLevel(logging.DEBUG)
+    else:
+        _syslog_handler.setLevel(logging.INFO)
+        _smtp_handler.setLevel(logging.ERROR)
 
-    app.logger.addHandler(_smtp_handler)
+        app.logger.addHandler(_smtp_handler)
 
-print(app.config['SERVER_NAME'])
-
-app.logger.addHandler(_syslog_handler)
+    app.logger.addHandler(_syslog_handler)
 
 from . import (
         views,
