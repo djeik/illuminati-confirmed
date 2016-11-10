@@ -19,9 +19,9 @@ if __name__ == '__main__':
             bytearray(sys.stdin.read()),
             dtype=np.uint8,
     )
-    img_col = cv2.imdecode(img_raw, cv2.CV_LOAD_IMAGE_UNCHANGED)
+    img_col = cv2.imdecode(img_raw, cv2.IMREAD_UNCHANGED)
     img_contours = np.copy(img_col)
-    img = cv2.imdecode(img_raw, cv2.CV_LOAD_IMAGE_GRAYSCALE)
+    img = cv2.imdecode(img_raw, cv2.IMREAD_GRAYSCALE)
 
     IMG_SCALE_FACTOR = sum(np.shape(img_col)[:2])/2
     STROKE_SIZE = int(IMG_SCALE_FACTOR * 0.01) or 1
@@ -38,7 +38,7 @@ if __name__ == '__main__':
             0,
     )
 
-    contours, h = cv2.findContours(thresh, 1, 2)
+    im2, contours, h = cv2.findContours(thresh, 1, 2)
 
     print('Found', len(contours), 'contours.')
 
