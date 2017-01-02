@@ -12,3 +12,4 @@ __pycache__/
 .ackrc
 /.Python
 /pip-selfcheck.json
+*.pyc
